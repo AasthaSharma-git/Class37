@@ -22,8 +22,12 @@ class Form {
   
     display() {
 
-        this.button.mousePressed(()=> {
+        this.button.mousePressed(()=>{
 
+
+            
+
+               
                this.input.hide();
                this.button.hide();
                player.name = this.input.value();
@@ -31,9 +35,8 @@ class Form {
                this.greetings = createElement('h3');
                this.greetings.html("Hello " + player.name);
                this.greetings.position(130, 160);
-
+              
                playerCount=playerCount+1;
-               console.log(playerCount);
                player.updateCount(playerCount);
 
 

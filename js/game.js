@@ -8,6 +8,7 @@ class Game{
          var gameStateRef=database.ref('gameState');
          gameStateRef.on("value",function(data){
          gameState= data.val();
+         
           
             
          });
@@ -19,11 +20,14 @@ class Game{
         if(gameState===0){
 
            player=new Player();
-       
+
+
            var playerCountRef=await database.ref('playerCount').once("value");
+
            if(playerCountRef.exists()){
               
                  player.getCount();
+                
            
             }
            form=new Form();
@@ -46,8 +50,8 @@ class Game{
 
     update(state){
         gameState=state;
-        database.ref('gameState').set({
-            'gameState':state
+        database.ref('/').update({
+            gameState:state
         })
     }
 
